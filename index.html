@@ -65,10 +65,10 @@
 
       
       nav ul{
-        margin-top:20px;
+        /* margin-top:20px; */
       }
       .nav-extended {
-        min-height: 18vh;
+        /* min-height: 12vh; */
       }
       .carousel .carousel-item > img {
         width: 100%;
@@ -311,11 +311,11 @@ body {
       AOS.init();
     </script>
     <header>
-      <div class="navbar-fixed transparent">
+      <div class="navbar-fixed">
       <nav class="nav-extended white">
         <div class="nav-wrapper blue-text">
-          <a href="#!" class="brand-logo green-text"
-            style="padding:20px">PrakalpaSanika Info Tech</a>
+          <a href="#!" class="brand-logo blue-text text-darken-2"
+            style="padding:0px">PrakalpaSanika Info Tech</a>
           <a href="#" data-target="mobile-demo" class="sidenav-trigger"
             ><i class="material-icons">menu</i></a
           >
@@ -326,7 +326,7 @@ body {
             <li><a href="#ourservice">Our Service</a></li>
             <li><a href="#products">Our Products</a></li>
             <li><a href="#ourclients">Our Clients</a></li>
-            <li><a class="green white-text" href="#contact">Contact Us</a></li>
+            <li><a class="blue darken-2 white-text" href="#contact">Contact Us</a></li>
           </ul>
         </div>
       </nav>
@@ -800,10 +800,13 @@ using HelloDoctor Application....
         $(".modal").modal();
         $('.parallax').parallax();
         $('.scrollspy').scrollSpy({
-          activeClass:'active',
-          scrollOfffset: 0,
+          activeClass: "active",
+          scrollOfffset: 10,
         });
       });
+
+      
+      
 
       $('.slider').owlCarousel({
             items: 3,
@@ -813,6 +816,14 @@ using HelloDoctor Application....
             loop: true,
             autoPlay: 3000
         });
+        
+        $(window).scroll(function() {
+  if ($(document).scrollTop() > 50) {
+    $('nav').addClass('transparent');
+  } else {
+    $('nav').removeClass('transparent');
+  }
+});
 
         $("#typed").typed({
   		strings: ["Prakalpasanika Info Tech."],
