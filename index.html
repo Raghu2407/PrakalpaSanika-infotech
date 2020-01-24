@@ -15,6 +15,7 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700|Google+Sans:400,500,700,900|Google+Sans+Display:400,500">
     <!--Import materialize.css-->
     <link
       type="text/css"
@@ -47,6 +48,9 @@
         color: #234d70 !important;
         font-weight: bold;
 
+      }
+      body{
+        /* font-family: "Google Sans"; */
       }
 
       @media only screen and (max-width: 600px){
@@ -197,6 +201,7 @@
 .prakalpa-header{
   font-weight: bold;
   font-size: 10rem;
+  text-shadow: #ccc 0 1px 0, #c9c9c9 0 2px 0, #bbb 0 3px 0, #b9b9b9 0 4px 0, #aaa 0 5px 0,rgba(0,0,0,.1) 0 6px 1px, rgba(0,0,0,.1) 0 0 5px, rgba(0,0,0,.3) 0 1px 3px, rgba(0,0,0,.15) 0 3px 5px, rgba(0,0,0,.2) 0 5px 10px, rgba(0,0,0,.2) 0 10px 10px, rgba(0,0,0,.1) 0 20px 20px;
 }
   @media only screen and (max-width: 600px){
     .prakalpa-header{
@@ -286,7 +291,13 @@ body {
 }
 
 
-
+.tint{
+  position: absolute;
+  background:#9FA8DA;
+  height: 100%;
+  width:100%;
+  opacity: .6;
+}
   
     </style>
 
@@ -300,6 +311,7 @@ body {
       AOS.init();
     </script>
     <header>
+      <div class="navbar-fixed transparent">
       <nav class="nav-extended white">
         <div class="nav-wrapper blue-text">
           <a href="#!" class="brand-logo green-text"
@@ -318,6 +330,7 @@ body {
           </ul>
         </div>
       </nav>
+    </div>
 
       <ul class="sidenav blue-text" id="mobile-demo">
         <li><a href="#home">Home</a></li>
@@ -329,16 +342,17 @@ body {
       </ul>
     </header>
     <main>
-      <section class="sections" id="home">
+      <section class="sections scrollspy" id="home">
         <!-- add carousel -->
-        <div class="carousel carousel-slider">
-          <a class="carousel-item red white-text" href="#one!">
-            <img
+        <div class="carousel carousel-slider " >
+          <a  class="carousel-item  white-text " href="#one!" >
+            <div class="tint"></div>
+            <img class=""  
               src="https://images.unsplash.com/photo-1556740714-a8395b3bf30f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
             />
           </a>
           <div class="carousel-fixed-item center type-wrap">
-            <h1 id="typed" class="white-text about prakalpa-header hello typed ">Prakalpasanika Info Tech</h1>
+            <h1 id="typed" class="white-text about prakalpa-header hello typed "><span class="blue-text">P</span>rakalpasanika Info Tech</h1>
             <p class="white-text">
               
             </p>
@@ -351,7 +365,7 @@ body {
           </a>
         </div>
       </section>
-      <section class="section white" id="about">
+      <section class="section white scrollspy" id="about">
         <div class="row">
           <div class="col 12 m12 l12 center">
             <h2 class="header">
@@ -409,7 +423,7 @@ body {
           </div>
         </div>
       </section>
-      <section class="section grey lighten-3" id="ourteam">
+      <section class="section grey lighten-3 scrollspy" id="ourteam">
         <div class="row">
           <div class="col s12 m12 l12 center">
             <h2 class="header">
@@ -484,8 +498,8 @@ body {
           </div>
         </div>
       </section>
-      <section class="section white"data-aos="fade-out-right"data-aos-easing="ease-in-out-cubic"
-      data-aos-duration="2000" id="ourservices">
+      <section class="section white scrollspy" data-aos="fade-out-right"data-aos-easing="ease-in-out-cubic"
+      data-aos-duration="2000" id="ourservice">
         <div class="row">
           <div class="col s12 m12 l12 center">
             <h2 class="header">
@@ -545,7 +559,7 @@ body {
           </div>
         </div>
       </section>
-      <section class="section grey lighten-4" id="products">
+      <section class="section grey lighten-4 scrollspy" id="products">
         <div class="row">
           <div class="col s12 m12 l12 center">
             <h2 class="header">
@@ -615,7 +629,7 @@ using HelloDoctor Application....
           </div>
         </div>
       </section>
-      <div class="sections" id="ourclients">
+      <div class="sections scrollspy" id="ourclients">
           <div class="row">
             <div class="col s12 m12 l12 center">
               <h2 class="header"><span class="about">Our</span><span class="lighter-text">Client</span></h2>
@@ -630,6 +644,7 @@ using HelloDoctor Application....
               
             </div>
             <br><br> <br><br> <br><br> <br><br> <br><br>
+            <br><br> <br><br> <br><br>
             <marquee behavior="slide" direction="right>"
              >
               <div class="row">
@@ -678,13 +693,10 @@ using HelloDoctor Application....
                 <img src="http://prakalpatvs.com/img/logo2.png" width="120" height="80" alt="Natural" />
               </div>
             </div>
-        </div>
-            
-                
-               
+        </div>     
               </marquee>
         </div>
-      <section class="section white" id="contact">
+      <section class="section white scrollspy" id="contact">
           <div class="row">
               <div class="col s12 m12 l12 center">
                   <h2 class="header"><span class="about">Contact</span><span class="lighter-text">Us</span></h2>
@@ -787,6 +799,10 @@ using HelloDoctor Application....
        
         $(".modal").modal();
         $('.parallax').parallax();
+        $('.scrollspy').scrollSpy({
+          activeClass:'active',
+          scrollOfffset: 0,
+        });
       });
 
       $('.slider').owlCarousel({
