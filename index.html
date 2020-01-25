@@ -73,7 +73,8 @@
       }
       .carousel .carousel-item > img {
         width: 100%;
-        max-height: 80vh;
+        /* max-height: 80vh; */
+        max-height: 100vh;
       }
       .about {
         font-weight: 500;
@@ -297,7 +298,7 @@ body {
   background:#9FA8DA;
   height: 100%;
   width:100%;
-  opacity: .6;
+  opacity: .2;
 }
 
 .item{
@@ -371,7 +372,7 @@ body {
           <a  class="carousel-item  white-text " href="#one!" >
             <div class="tint"></div>
             <img class=""  
-              src="https://images.unsplash.com/photo-1556740714-a8395b3bf30f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
+              src="mainslide1.jpg"
             />
           </a>
           <div class="carousel-fixed-item center type-wrap">
@@ -383,7 +384,13 @@ body {
 
           <a class="carousel-item " href="#two!">
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShna_Rzo2qBimL6vmekL32La0Wy0b0rB3U8UE1oORqRvlU88NL&s"
+              src="mainsllide2.jpg"
+            />
+          </a>
+
+          <a class="carousel-item " href="#three!">
+            <img
+              src="mainslide3.jpg"
             />
           </a>
         </div>
@@ -826,9 +833,9 @@ using HelloDoctor Application....
    
         
     <footer class="page-footer grey lighten-4 black-text">
+      <div class="divider"></div>
         <div class="container">
             <div class="row">
-              <div class="divider"></div>
                 <div class="col s12 m6 l6">
                     <p>PrakalpaSanika Info Tech</p>
                     <p>PrakalpaSanika Info Tech helps customers do business better by leveraging our
@@ -848,8 +855,8 @@ using HelloDoctor Application....
                   </div>
             </div>
         </div>
-        <div class="footer-copyright grey darken-3">
-            <div class="right-align">
+        <div class="footer-copyright grey lighten-3">
+            <div class="right-align grey-text text-darken-4">
             © PrakalpaSanika Info Tech 2020
             </div>
             
@@ -868,8 +875,12 @@ using HelloDoctor Application....
       $(document).ready(function() {
         $(".carousel.carousel-slider").carousel({
           fullWidth: true,
-          indicators: true
+          indicators: true,
         });
+        setInterval(function(){
+          $(".carousel").carousel("next");
+        },3000);
+        
        
 
         $(".carousels.carousel-sliders").carousel();
