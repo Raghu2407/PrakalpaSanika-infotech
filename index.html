@@ -40,7 +40,6 @@
   <meta name="author" content="Prakalpa Sanika infotech,Pvt Ltd">
   <meta name="google-site-verification" content="vU37kRyn20dajsIDJTZK7wpIITxZpRedyPhUDA8WyT0" />
   <link href="//cdn.shopify.com/s/global/social/social-icons.css" rel="stylesheet" type="text/css" media="all" />
-  
 
     <style>
       
@@ -64,6 +63,10 @@
           
           
         }
+      }
+
+      .nav-display{
+        display: none;
       }
 
 
@@ -334,6 +337,68 @@ body {
     font-family: 'Ubuntu Mono', monospace;
     font-weight: 500;
   }
+
+  .sticky{
+    position: fixed;
+    top:0;
+    width:100%
+  }
+
+  .sticky + .content {
+  padding-top: 102px;
+}
+body {
+  background: #2d2d37;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+.arrow {
+  text-align: center;
+  /* margin: 8% 0; */
+}
+.bounce {
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
+}
+@-webkit-keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+  }
+  60% {
+    -webkit-transform: translateY(-15px);
+            transform: translateY(-15px);
+  }
+}
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+  }
+  60% {
+    -webkit-transform: translateY(-15px);
+            transform: translateY(-15px);
+  }
+}
+
     </style>
 
     <!--Let browser know website is optimized for mobile-->
@@ -346,11 +411,11 @@ body {
       AOS.init();
     </script>
     <header>
-      <div class="navbar-s">
+      <div class="navbar">
       <nav class="nav-extended white">
         <div class="nav-wrapper blue-text">
           <a href="#!" class="brand-logo blue-text text-darken-2"
-            style="padding:0px">PrakalpaSanika Info Tech</a>
+            style="padding:0px">PrakalpaSanika Infotech</a>
           <a href="#" data-target="mobile-demo" class="sidenav-trigger"
             ><i class="material-icons">menu</i></a
           >
@@ -376,7 +441,7 @@ body {
             <li><a class="green white-text" href="#contact">Contact Us</a></li>
       </ul>
     </header>
-    <main>
+    <main class="content">
       <section class="sections scrollspy" id="home">
         <!-- add carousel -->
         <div class="carousel carousel-slider " >
@@ -387,10 +452,14 @@ body {
             />
           </a>
           <div class="carousel-fixed-item center type-wrap">
-            <h3 id="typed" class="white-text about prakalpa-header hello typed "><span class="blue-text">P</span>rakalpaSanika Info Tech</h3>
-            <p class="white-text">
+            <h3 id="typed" class="white-text about prakalpa-header hello typed "><span class="blue-text">P</span>rakalpaSanika Infotech</h3>
+            <!-- <p class="white-text">
               
-            </p>
+            </p> -->
+          
+            <div class="arrow bounce ">
+              <a class="fa fa-arrow-down fa-2x srollspy" href="#about"><i class="material-icons large">keyboard_arrow_down</i></a>
+            </div>
           </div>
 
           <a class="carousel-item " href="#two!">
@@ -446,7 +515,7 @@ body {
             data-aos-mirror="false"
             data-aos-once="false"
             data-aos-anchor-placement="top">
-              PrakalpaSanika Info Tech helps customers do business better by leveraging our
+              PrakalpaSanika Infotech helps customers do business better by leveraging our
               industry-wide experience, deep technology expertise, comprehensive
               portfolio of services and vertically aligned business model. Our
               emerging technologies enable us to harness the latest technology
@@ -489,9 +558,9 @@ body {
             </h2>
           </div>
         </div>
-        <div class="row">
-          <div class="">
-              <div class="col s12 m3 l3" data-aos="fade-in"
+        <div class="row ">
+          <div class="col">
+              <div class="col s12 m4 l4" data-aos="fade-in"
               data-aos-easing="linear"
               data-aos-duration="1500">
               <div style="border-top:solid rgba(197, 197, 32, 0.822)" class="card">
@@ -505,7 +574,7 @@ body {
                   </div>    
                   </div>
               </div>
-            </div>
+            <!-- </div> -->
             <!-- <div class="col s12 m4 l3">
               <div class="card hoverable">
                 <div class="card-image">
@@ -516,7 +585,7 @@ body {
                 </div>
               </div>
             </div> -->
-            <div class="col s12 m4 l3" data-aos="fade-in"
+            <div class="col s12 m4 l4" data-aos="fade-in"
             data-aos-easing="linear"
             data-aos-duration="1500">
               <div class="card hoverable">
@@ -528,7 +597,7 @@ body {
                 </div>
               </div>
             </div>
-            <div class="col s12 m4 l3" data-aos="fade-in"
+            <div class="col s12 m4 l4" data-aos="fade-in"
             data-aos-easing="linear"
             data-aos-duration="1500">
               <div class="card hoverable">
@@ -540,19 +609,33 @@ body {
                 </div>
               </div>
             </div>
-            <div class="col s12 m4 l3" data-aos="fade-in"
-            data-aos-easing="linear"
-            data-aos-duration="1500">
-              <div class="card hoverable">
-                <div class="card-image card-team">
-                  <img
-                    src="team.jpeg"
-                  />
-                  <span class="card-title">Team members</span>
-                </div>
-              </div>
+            
+           
+           
+          </div>
+          
+          
+        </div>
+        <div class="row">
+          <div class="col s12 m12 l12">
+            <div class="col s12 m6 l4" data-aos="fade-in"
+        data-aos-easing="linear"
+        data-aos-duration="1500">
+          <div class="card hoverable">
+            <div class="card-image card-team">
+              <img
+                src="psinfo.jpg"
+              />
+              <span class="card-title">Our Team</span>
             </div>
           </div>
+        </div>
+          <div class="col s12 m8 l8">
+            <h4 class="about blue-text text-darken-4">Meet our Team of PrakalpaSanika infotech</h4 class="about blue-text text-darken-4">
+            <h6>Our enthusiastic team who have strong determination towards their work like technology,business and marketing field.Our team is always ready to take a realtime challenge of day to day life and serve best service across india</h6>
+          </div>
+          </div>
+          
         </div>
       </section>
       <section class="section white scrollspy" data-aos="fade-out-right"data-aos-easing="ease-in-out-cubic"
@@ -649,13 +732,13 @@ body {
             </div>
           </div>
           <div class="col s12 m8 l8">
-            <h3 class="about col green-text text-lighten-1">HelloDoctor</h3>
+            <h3 class="about col blue-text text-darken-2">HelloDoctorz</h3>
             <p class="about col">
               HelloDoctor is a online platform which helps M.R to connect with Doctor's and to take appointment with respective DOCTOR,
 using HelloDoctor Application....
             </p>
             <div class="col s12">
-              <h3 class="about green-text">Plan your day Effectively</h3>
+              <h3 class="about blue-text text-darken-1">Plan your day Effectively</h3>
             </div>
             <div class="col s12 m4 l4">
               <h5>Doctors</h5>
@@ -874,12 +957,6 @@ using HelloDoctor Application....
                 <div class="col l4 offset-l2 s12 ">
                     <h5 class="grey-text darken-4">Links</h5>
                     <ul class="black-text" style="color:black">
-                      <li><a class="grey-text text-darken-3" href="#!">Home</a></li>
-                      <li><a class="grey-text text-darken-3" href="#!">About</a></li>
-                      <li><a class="grey-text text-darken-3" href="#!">Our Team</a></li>
-                      <li><a class="grey-text text-darken-3" href="#!">Our Team</a></li>
-                      <li><a class="grey-text text-darken-3" href="#!">Our Products</a></li>
-                      <li><a class="grey-text text-darken-3" href="#!">Our Clients</a></li>
                       <li><a class="grey-text text-darken-3" href="#!">Blog</a></li>
                       <li><a class="grey-text text-darken-3" href="#!">Credits</a></li>
                       <li><a class="grey-text text-darken-3" href="#!">Careers</a></li>
@@ -949,10 +1026,13 @@ using HelloDoctor Application....
         });
         
         $(window).scroll(function() {
-  if ($(document).scrollTop() > 50) {
-    $('nav').addClass('transparent');
+          $('.navbar').removeClass('nav-display');
+  if ($(document).scrollTop() > 1) {
+    $('.navbar').addClass('navbar-fixed');
+    
   } else {
-    $('nav').removeClass('transparent');
+    $('.navbar').removeClass('navbar-fixed');
+    $('.navbar').addClass('nav-display');
   }
 });
 
@@ -972,7 +1052,7 @@ $('.stop').on('click',function(){
     owl.trigger('stop.owl.autoplay')
 })
 
-        $("#typed").typed({
+$("#typed").typed({
   		strings: ["PrakalpaSanika Info Tech."],
   		typeSpeed: 200,
   		startDelay: 0,
