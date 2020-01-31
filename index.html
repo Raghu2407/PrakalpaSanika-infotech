@@ -58,7 +58,7 @@
       }
 
       @media only screen and (max-width: 600px){
-       nav .brand-logo{
+nav .brand-logo{
           font-size: 1rem;
           padding: 0;
           
@@ -113,9 +113,8 @@
   #map {
         height: 400px;
       }
-      /* Optional: Makes the sample page fill the window. */
-     
-      .dm-width {
+      /* Optional: Makes the sample page fill the window. */    
+.dm-width {
    width: 300px;
    margin: 0 auto;
 }
@@ -211,13 +210,26 @@
 .prakalpa-header{
   font-weight: bold;
   /* font-size: 10rem; */
-  font-size: 8rem;
+  font-size: 6rem;
   text-shadow: #ccc 0 1px 0, #c9c9c9 0 2px 0, #bbb 0 3px 0, #b9b9b9 0 4px 0, #aaa 0 5px 0,rgba(0,0,0,.1) 0 6px 1px, rgba(0,0,0,.1) 0 0 5px, rgba(0,0,0,.3) 0 1px 3px, rgba(0,0,0,.15) 0 3px 5px, rgba(0,0,0,.2) 0 5px 10px, rgba(0,0,0,.2) 0 10px 10px, rgba(0,0,0,.1) 0 20px 20px;
+}
+.prakalpa-header::first-letter{
+  color: #4433ee;
+}
+#typed span::first-letter{
+  color: #4433ee;
 }
   @media only screen and (max-width: 600px){
     .prakalpa-header{
   font-weight: bold;
   font-size: 3rem;
+  
+}
+.prakalpa-header::first-letter{
+  color: #4433ee;
+}
+.prakalpa-header span::first-letter{
+  color: #4433ee;
 }
   }
 
@@ -334,7 +346,7 @@ body {
 
 .social-links a { display: -moz-inline-stack; display: inline-block; zoom: 1; *display: inline; margin: 0; padding: 0.05em; color: #555!important; font-size: 22px!important; }
   
-   p,h6 {
+p,h6 {
     font-family: 'Source Sans Pro', sans-serif;;
     /* font-family: 'Ubuntu Mono', monospace; */
     font-weight: 500;
@@ -343,7 +355,7 @@ body {
   .theme-color{
 background: #4c6def;
   }
-  theme-text{
+  .theme-text{
     color:#4c6def;
   }
 
@@ -426,16 +438,16 @@ a {
 	background-color: #0ae;
 	border-radius: 10px;
 	background-image: -webkit-gradient(linear, 0 0, 0 100%,
-	                   color-stop(.5, rgba(255, 255, 255, .2)),
-					   color-stop(.5, transparent), to(transparent));
+color-stop(.5, rgba(255, 255, 255, .2)),
+color-stop(.5, transparent), to(transparent));
 }
 
 
 .cards{
   -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
+  transform-style: preserve-3d;
 	-webkit-perspective: 1000px;
-	        perspective: 1000px;
+	perspective: 1000px;
 }
 .front,
 .back{
@@ -447,7 +459,7 @@ a {
 	transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
 	transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
 	-webkit-backface-visibility: hidden;
-	        backface-visibility: hidden;
+	backface-visibility: hidden;
 	text-align: center;
 	min-height: 280px;
 	height: auto;
@@ -498,25 +510,25 @@ a {
 
 .inner{
     -webkit-transform: translateY(-50%) translateZ(60px) scale(0.94);
-            transform: translateY(-50%) translateZ(60px) scale(0.94);
+    transform: translateY(-50%) translateZ(60px) scale(0.94);
     top: 50%;
     position: absolute;
     left: 0;
     width: 100%;
     padding: 2rem;
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     outline: 1px solid transparent;
     -webkit-perspective: inherit;
-            perspective: inherit;
+    perspective: inherit;
     z-index: 2;
 }
 
 .cards .back{
     -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
+    transform: rotateY(180deg);
     -webkit-transform-style: preserve-3d;
-            transform-style: preserve-3d;
+    transform-style: preserve-3d;
 }
 
 .cards .front{
@@ -570,6 +582,28 @@ a {
   font-weight: 300;
 }
 
+.top-indicator {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  background-color: #f1f1f1;
+}
+
+/* The progress container (grey background) */
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background: #ccc;
+}
+
+/* The progress bar (scroll indicator) */
+.progress-bar {
+  height: 8px;
+  background: #4caf50;
+  width: 0%;
+}
+
 
     </style>
 
@@ -602,7 +636,12 @@ a {
           </ul>
         </div>
       </nav>
-    </div>
+      <div class="top-indicator">
+        <div class="progress-container">
+          <div class="progress-bar" id="myBar"></div>
+      </div>
+      </div>
+      
 
       <ul class="sidenav blue-text" id="mobile-demo">
         <li><a href="#home">Home</a></li>
@@ -624,7 +663,7 @@ a {
             />
           </a>
           <div class="carousel-fixed-item center type-wrap">
-            <h3 id="typed" class="white-text about prakalpa-header hello typed "><span class="blue-text">P</span>rakalpaSanika Infotech</h3>
+            <h3 id="typed" class="white-text about prakalpa-header hello typed "><span class="blue-text">P</span>rakalpa<span class="prakalpa-header">S</span>anika Infotech</h3>
             <!-- <p class="white-text">
               
             </p> -->
@@ -797,9 +836,7 @@ a {
             <p>Director PrakalpaSanika Infotech</p>
           </div>
             </div>
-            
-           
-           
+                    
           </div>
         
         </div>
@@ -821,10 +858,12 @@ a {
             <h4 class="about blue-text text-darken-4">Meet our Team  PrakalpaSanika infotech</h4>
             <p>Moving with Enthusiasm and having strong determination towards their work in the field of Technology,Business,Marketing tea. Team PrakalpaSanika has dedicated fulltime position for project management,Mobile app development like (Android & IOS apps), Full stack web development and digital marketing to provide fast and responsive service to business</p>
             <p>We as  a team love and have fun in what we do, and we as bootstrapped company take take initiative to do things/jobs out of the box.
-              We as a team work together and keep encouraging each to complete at the best.We oblige to the promise made to our clients that we shall provide excellent service. We learn ,we grow,we move together making an social impact</h6>
+              We as a team work together and keep encouraging each to complete at the best.We oblige to the promise made to our clients that we shall provide excellent service. We learn ,we grow,we move together making an social impact</p>
           </div>
           </div>
           
+        </div>
+        </div>
         </div>
       </section>
       <section class="section white scrollspy" data-aos="fade-out-right"data-aos-easing="ease-in-out-cubic"
@@ -1141,7 +1180,6 @@ using HelloDoctor Application....
         >
       </div>
     </div>
-   
       
     <footer class="page-footer grey lighten-4 black-text">
       <div class="divider"></div>
@@ -1254,7 +1292,7 @@ $('.stop').on('click',function(){
 })
 
 $("#typed").typed({
-  		strings: ["PrakalpaSanika Info Tech."],
+  		strings: ["Prakalpa<span class='blue-text text-darken-4'>S</span>anika Infotech."],
   		typeSpeed: 200,
   		startDelay: 0,
   		// backSpeed: 0,
@@ -1262,7 +1300,17 @@ $("#typed").typed({
   		loop: false,
   		cursorChar: "",
   		contentType: 'html'
-  	});
+    });
+    
+    // When the user scrolls the page, execute myFunction
+window.onscroll = function() {myFunction()};
+
+function myFunction() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.width = scrolled + "%";
+}
     </script>
       <script>
         function initMap() {
