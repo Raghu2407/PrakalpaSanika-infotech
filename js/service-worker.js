@@ -85,8 +85,9 @@ self.addEventListener('push', function (e) {
         //   icon: 'images/checkmark.png'},
         {
                 action: 'close', title: 'I don\'t want any of this',
-                //   icon: 'images/xmark.png'},
-            }]
+                // icon: 'images/xmark.png'
+            },
+        ]
     };
     e.waitUntil(
         self.registration.showNotification('Push Notification', options)
