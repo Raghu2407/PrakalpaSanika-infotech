@@ -4,8 +4,8 @@ var urlsToCache = [
     'index.html',
     'css/materialize.min.css',
     'css/raghu.css',
-    'js',
-    'images'
+    'js/',
+    'images/'
 ];
 self.addEventListener('install', function (event) {
     event.waitUntil(
@@ -62,4 +62,18 @@ function fetchAndCache(url) {
             console.log('Request failed:', error);
             // You could return a custom offline 404 page here
         });
+}
+
+
+//notification
+Notification.requestPermission(function (status) {
+    console.log('Notification permission status:', status);
+});
+
+function displayNotification() {
+    if (Notification.permission == 'granted') {
+        navigator.serviceWorker.getRegistration().then(function (reg) {
+            reg.showNotification('Hello world!');
+        });
+    }
 }
