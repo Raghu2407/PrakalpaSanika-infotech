@@ -14,6 +14,22 @@ self.addEventListener('install', function (event) {
     );
 });
 
+importScripts('/cache-polyfill.js');
+
+
+self.addEventListener('install', function (e) {
+    e.waitUntil(
+        caches.open('website').then(function (cache) {
+            return cache.addAll([
+                '.',
+                'index.html',
+                'css/materialize.min.css',
+                'css/raghu.css'
+            ]);
+        })
+    );
+});
+
 self.addEventListener('fetch', function (event) {
     event.respondWith(
         caches.match(event.request)
@@ -22,6 +38,7 @@ self.addEventListener('fetch', function (event) {
             })
     );
 });
+
 
 function fetchAndCache(url) {
     return fetch(url)
