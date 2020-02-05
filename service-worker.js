@@ -3,9 +3,7 @@ var urlsToCache = [
     '.',
     'index.html',
     'css/materialize.min.css',
-    'css/raghu.css',
-    'js',
-    'images'
+    'css/raghu.css'
 ];
 self.addEventListener('install', function (event) {
     event.waitUntil(
@@ -26,10 +24,7 @@ self.addEventListener('install', function (e) {
                 '.',
                 'index.html',
                 'css/materialize.min.css',
-                'css/raghu.css',
-                'js',
-                'images'
-
+                'css/raghu.css'
             ]);
         })
     );
