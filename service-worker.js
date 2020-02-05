@@ -100,9 +100,10 @@ self.addEventListener('push', function (e) {
             primaryKey: 1
         },
         actions: [
-            { action: 'explore', title: 'Explore this new world',
-        //   icon: 'images/checkmark.png'},
-        
+            {
+                action: 'explore', title: 'Explore this new world',
+                //   icon: 'images/checkmark.png'},
+            }
         ]
     };
     e.waitUntil(
