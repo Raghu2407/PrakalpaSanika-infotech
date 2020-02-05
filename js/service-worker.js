@@ -62,3 +62,4 @@ self.addEventListener('notificationclick', function (e) {
         notification.close();
     }
 });
+
