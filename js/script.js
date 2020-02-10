@@ -61,7 +61,7 @@ $('.stop').on('click', function () {
 })
 
 $("#typed").typed({
-    strings: ["Prakalpa<span class='blue-text text-darken-4'>S</span>anika Infotech."],
+    strings: ["Prakalpa<span class='blue-text text-darken-4'>S</span>anika InfoTech."],
     typeSpeed: 200,
     startDelay: 0,
     // backSpeed: 0,
